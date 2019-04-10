@@ -1,5 +1,5 @@
 from redbot.core import commands
-from cog_shared import testlib  # type: ignore
+from cog_shared.testlib import testlib  # type: ignore
 
 
 class TestCog(commands.Cog):
