@@ -1,0 +1,10 @@
+{
+    "name": "TestCog",
+    "author": ["jack1142"],
+    "short": "Some dummy cog for Downloader testing.",
+    "description": "Some dummy cog for Downloader testing.",
+    "install_msg": "Thanks for installing TestCog.",
+    "requirements": ["pillow"],
+    "tags": ["tools"],
+    "disabled": false
+}
