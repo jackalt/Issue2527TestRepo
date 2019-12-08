@@ -1,4 +1,4 @@
-from .blah.cog import DisabledCog
+from .cog import DisabledCog
 
 
 def setup(bot):
