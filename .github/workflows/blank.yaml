@@ -31,13 +31,14 @@ jobs:
       fail-fast: false
       matrix:
         python-version:
+          - "3.6"
           - "3.7"
           - "3.8"
     steps:
       - name: Set up Python ${{ matrix.python-version }}
         run: |
-          sudo add-apt-repository ppa:deadsnakes/ppa
-          sudo apt install python${{ matrix.python-version }} \
+          sudo add-apt-repository --yes ppa:deadsnakes/ppa
+          sudo apt --yes install python${{ matrix.python-version }} \
           python${{ matrix.python-version }}-dev python3-pip build-essential
       - name: Show Python version
         run: python${{ matrix.python-version }} --version
