@@ -40,4 +40,4 @@ jobs:
           sudo apt install python${{ matrix.python-version }} \
           python${{ matrix.python-version }}-dev python3-pip build-essential
       - name: Show Python version
-        run: python${{ matrix.python-version }}
+        run: python${{ matrix.python-version }} --version
