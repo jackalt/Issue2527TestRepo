@@ -26,3 +26,11 @@ jobs:
       shell: bash
     - run: ls $RUNNER_TOOL_CACHE/PyPy
       shell: bash
+
+  python381:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: sudo add-apt-repository ppa:deadsnakes/ppa
+      - run: sudo apt install python3.8
+      - run: python3.8 --version
