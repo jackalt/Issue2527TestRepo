@@ -1,7 +1,5 @@
 name: Changelog check
-on:
-  issues:
-    types: [opened]
+on: [pull_request]
 
 jobs:
   changelog_check:
