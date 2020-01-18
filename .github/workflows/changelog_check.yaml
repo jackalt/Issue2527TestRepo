@@ -1,0 +1,15 @@
+name: Changelog check
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  changelog_check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check for changelog files
+        uses: actions/github-script@0.4.0
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            console.log(context);
