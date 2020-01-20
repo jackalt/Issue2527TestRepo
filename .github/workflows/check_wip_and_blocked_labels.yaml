@@ -21,7 +21,7 @@ jobs:
             } else {
                 const status = 'success';
             }
-            github.issues.addLabels({
+            github.checks.create({
               name: 'No WIP and Blocked labels',
               owner: context.repo.owner,
               repo: context.repo.repo,
