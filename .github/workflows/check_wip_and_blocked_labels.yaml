@@ -11,20 +11,15 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
+            const core = require('@actions/core');
             const is_blocked_label = (label) => label.name.startsWith('Blocked') || label.name == 'Work In Progress';
             console.log(context.payload.pull_request.labels);
             console.log(context)
             console.log(context.pull_request)
             console.log(context.payload.pull_request)
             if (context.payload.pull_request.labels.some(is_status_label)) {
+                core.setFailed('PR has a Blocked/WIP label. DON'T MERGE.');
                 const status = 'pending';
             } else {
                 const status = 'success';
             }
-            github.checks.create({
-              name: 'No WIP and Blocked labels',
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              head_sha: context.pull_request.head.sha,
-              status: status
-            });
