@@ -18,7 +18,7 @@ async function run() {
         name: 'No WIP and Blocked labels',
         owner: context.repo.owner,
         repo: context.repo.repo,
-        head_sha: context.pull_request.head.sha,
+        head_sha: context.payload.pull_request.head.sha,
         status: 'completed',
         conclusion: conclusion
     });
