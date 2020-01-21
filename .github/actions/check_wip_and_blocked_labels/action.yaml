@@ -1,0 +1,9 @@
+name: "Check PR for WIP and Blocked labels"
+description: "Check PR for WIP and Blocked labels"
+inputs:
+  github-token:
+    description: "Token provided by GitHub"
+    required: true
+runs:
+  using: "node12"
+  main: "index.js"
