@@ -7,6 +7,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: ./.github/actions/check_wip_and_blocked_labels
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Check PR for WIP and Blocked labels
+        uses: ./.github/actions/check_wip_and_blocked_labels
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
