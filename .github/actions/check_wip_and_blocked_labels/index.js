@@ -7,6 +7,12 @@ async function run() {
 
     const octokit = new github.GitHub(github_token);
     
+    if (context.payload.pull_request.labels.some(is_status_label)) {
+        const conclusion = 'failure';
+    } else {
+        const conclusion = 'success';
+    }
+    
     octokit.checks.create({
         name: 'No WIP and Blocked labels',
         owner: context.repo.owner,
