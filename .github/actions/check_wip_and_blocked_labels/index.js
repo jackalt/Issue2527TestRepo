@@ -8,7 +8,7 @@ async function run() {
     const octokit = new github.GitHub(github_token);
     
     const is_blocked_label = (label) => label.name.startsWith('Blocked') || label.name == 'Work In Progress';
-    const conclusion = 'success';
+    let conclusion = 'success';
     if (context.payload.pull_request.labels.some(is_blocked_label)) {
         conclusion = 'failure';
     }
