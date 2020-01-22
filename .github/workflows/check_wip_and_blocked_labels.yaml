@@ -1,7 +1,7 @@
 name: Check PR for WIP and Blocked labels
 on:
   pull_request:
-    types: [opened, synchronized, labeled, unlabeled]
+    types: [synchronized, labeled, unlabeled]
 
 jobs:
   build:
