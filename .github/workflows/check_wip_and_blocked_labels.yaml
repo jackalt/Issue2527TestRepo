@@ -1,7 +1,7 @@
 name: Check PR for WIP and Blocked labels
 on:
   pull_request:
-    types: [labeled, unlabeled, synchronized]
+    types: [opened, synchronized, labeled, unlabeled]
 
 jobs:
   build:
@@ -9,6 +9,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
+      - uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
       - name: "Install action's requirements"
         run: npm install
         working-directory: ./.github/actions/check_wip_and_blocked_labels
