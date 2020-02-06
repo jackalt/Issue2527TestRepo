@@ -1,0 +1,16 @@
+name: PR referencer
+on:
+  issues:
+    types: [opened, edited, deleted, transferred, pinned, unpinned, closed, reopened, assigned, unassigned, labeled, unlabeled, locked, unlocked, milestoned, demilestoned]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Apply Triage Label
+        uses: actions/github-script@0.4.0
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            console.log(context);
+            console.log(context.payload);
