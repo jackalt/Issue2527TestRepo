@@ -6,7 +6,7 @@ class TestCog(commands.Cog):
     """Some dummy cog for Downloader testing."""
 
     def __init__(self, bot):
-        self.bot = bot
+        self.bot = rfbot
 
     async def initialize(self):
         pass
