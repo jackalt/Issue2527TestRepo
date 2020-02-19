@@ -11,7 +11,7 @@ class TestCog(commands.Cog):
     async def initialize(self):
         pass
 
-    @commands.is_owner()
+    @commands.is_owner(r)
     @commands.command()
     async def testcommand(self, ctx, x: int, y: int):
         """Settings for voice tools"""
